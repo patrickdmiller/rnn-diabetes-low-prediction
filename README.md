@@ -8,7 +8,7 @@ Data is stored in pg and combined with treatments and carb intake and queried us
 
 A 3 layer (GRU32 x GRU64 x Dense 1) is trained using a window of 2 hours (24 samples) before a low or normal event within the next 2 readings (10 minute lookahead). Network is trained to classify for low or normal event.
 
-model is loaded into node.js using tensorflow-js. Every ~5 minutes when nightscout receives new data from dexcom the prediction is updated.
+model is loaded into node.js using tensorflow-js. Every ~5 minutes when nightscout receives new data from dexcom the prediction is updated. Push updates are sent from nightscout > node using [nightscout_socketio_client](https://github.com/patrickdmiller/nightscout_socketio_client)
 
 see it in action [here](https://nsml.noice.us)
 
